@@ -1,0 +1,199 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[left=1.5cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+\usepackage[T1]{fontenc}    %  (ą, ł, ś)
+\usepackage[utf8]{inputenc} %  UTF-8
+\usepackage[colorlinks=true, linkcolor=black,citecolor=black]{hyperref}
+\usepackage[polish]{babel}
+\usepackage[polish]{cleveref}
+\usepackage{array}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage[table]{xcolor}
+\documentclass[12pt]{article}
+\crefname{figure}{Rys.}{Rys.}
+\Crefname{figure}{Rys.}{Rys.}
+\crefname{section}{Rozd.}{Rozdziały}
+\Crefname{section}{Rozd.}{Rozdziały}
+
+
+\title{\includegraphics[width=0.5\textwidth]{obrazy/logo-pwr-wm.png}\\[0.2cm] \Huge Sprawozdanie z Fizyki \\[0.2cm] \Huge Ćwiczenie 100a}
+\author{\Large t0f1x | MTR I rok}
+\date{Wrocław, 11.05.2026}
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+\section{Wstęp}
+\label{Wstep}
+Ćwiczenie ma na celu wyznaczenie gęstości i określenie materiału, z którego wykonano walec z przelotowym otworem. Wyznaczenie gęstości wymaga objętości, o której można się dowiedzieć dokonując pomiaru wysokości, wewnętrznej i zewnętrznej średnicy walca, a także masy. Wykorzystane przyrządy pomiarowe: Suwmiarka z noniuszem, Mikrometr, Waga. 
+\section{Wyniki}
+
+\begin{table}[h]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    \makecell{Lp.} & \makecell{$D_z \cdot 10^{-3}$ \\ $[m]$} & \makecell{$D_w \cdot 10^{-3}$ \\ $[m]$} & \makecell{$H \cdot 10^{-3}$ \\ $[m]$} & \makecell{$m \cdot 10^{-3}$ \\ $[kg]$} & \makecell{$V \cdot 10^{-6}$ \\ $[m^3]$} & \makecell{$\rho$ \\ $[kg/m^3]$} \\   
+    \hline
+    1 & 16.48& 11.90& 33.80 & \multirow{5}{*}{8.32} & \multirow{5}{*}{3.51} &\multirow{5}{*}{2370} \\
+    \cline{1-4}
+    2 & 16.49& 11.75& 33.70 & & &\\
+    \cline{1-4}
+    3 & 16.49& 11.75& 33.70 & & &\\
+    \cline{1-4}
+    4 & 16.48& 11.80& 33.70 & & &\\
+    \cline{1-4}
+    5 & 16.48& 11.80& 33.70 & & &\\
+    \hline
+    $\Delta X$& 0.01 & 0.05 & 0.05 & 0.01 &\cellcolor{gray!30} &\cellcolor{gray!30}\\
+    \hline
+    $\overline{X}$& 16.484& 11.800& 33.720 & 8.320 &\cellcolor{gray!30} &\cellcolor{gray!30}\\
+    \hline
+    $u(X)$ & 0.0063 & 0.0400 & 0.0350 & 0.0058 &\cellcolor{gray!30} &\cellcolor{gray!30}\\
+    \hline
+    $u_z(X)$ & \cellcolor{gray!30} &\cellcolor{gray!30} &\cellcolor{gray!30} &\cellcolor{gray!30} & 0.02525 & 17.130  \\
+    \hline
+    \end{tabular}
+    \caption{Wyniki}
+    \label{tab:placeholder}
+\end{table}
+\begin{flushleft} 
+Suwmiarką o rozdzielczości 0.05 [mm] wykonano pomiary: Wysokość walca „H”, Średnica wewnętrzna „$D_w$”; 
+Mikrometrem o rozdzielczości 0.01 [mm] wykonano pomiar: Średnica zewnętrzna „$D_z$”; \\
+Wagą o rozdzielczości 0.01 [mm] wykonano pomiar: Masa „$m$”;
+\end{flushleft}
+\section{Obliczenia}
+\begin{flushleft}
+\paragraph{Objętość \((V)\) to funkcja 3 zmiennych: \(f(H,D_z,D_w);\) \\ Gęstość \((\rho)\) to funkcja 2 zmiennych: \(f(V,m);\)}
+\end{flushleft}
+
+            \subsection{\centering Średnica zewnętrzna „$ \ D_z \ $”}
+\subsubsection{Średnia wielkość}
+\begin{flalign*}
+    \overline{D_z} = \frac{16.48+16.49+16.49+16.48+16.48}{5} = 16.484  \cdot 10^{-3} \ [m] &&
+\end{flalign*}
+
+\subsubsection{Niepewność standardowa typu A}
+\begin{flalign*}
+    u_A(D_z) = \sqrt{\sum_{i=1}^{n=5} \frac{(D_{zi}-\overline{D_z})^2)}{n \cdot (n-1)}} = \sqrt{\frac{3(16.48-16.484)^2+2(16.49-16.484)^2}{20}} = 0.002449 \ [mm] = 0.0024 \cdot 10^{-3} \ [m] &&
+\end{flalign*}
+
+\subsubsection{Niepewność standardowa typu B}
+\begin{flalign*}
+    u_B(D_z)=\sqrt{\frac{\bigtriangleup_p^2(D_z)}{3}}=\frac{0.01}{\sqrt{3}}=0.0057735 \ [mm] = 0.0058\cdot 10^{-3} \ [m] &&
+\end{flalign*}
+\subsubsection{Niepewność standardowa całkowita}
+\begin{flalign*}
+    u(D_z)= \sqrt{u_A ^2(D_z)+ u_B ^2(D_z)} = \sqrt{(0.002449)^2+(0.0057735)^2}=0.006271 [mm] = 0.0063 \cdot 10^{-3} \ [m] &&
+\end{flalign*}
+
+            \subsection{\centering Średnica wewnętrzna „$ \ D_w \ $”}
+\subsubsection{Średnia wielkość}
+\begin{flalign*}
+    \overline{D_w} = \frac{11.90+11.75+11.75+11.80+11.80}{5} = 11.80  \cdot 10^{-3} \ [m] &&
+\end{flalign*}
+
+\subsubsection{Niepewność standardowa typu A}
+\begin{flalign*}
+    u_A(D_w) = \sqrt{\sum_{i=1}^{n=5} \frac{(D_{wi}-\overline{D_w})^2)}{n \cdot (n-1)}}  = \sqrt{\frac{(11.90-11.80)^2+2(11.75-11.80)^2}{20}} = 0.027386 \ [mm] = 0.027 \cdot 10^{-3} \ [m] &&
+\end{flalign*}
+
+\subsubsection{Niepewność standardowa typu B}
+\begin{flalign*}
+    u_B(D_w)=  \sqrt{\frac{\bigtriangleup_p^2(D_w)}{3}} =\frac{0.05}{\sqrt{3}}=0.0288675 \ [mm] = 0.0289\cdot 10^{-3} \ [m] &&
+\end{flalign*}
+\subsubsection{Niepewność standardowa całkowita}
+\begin{flalign*}
+    u(D_w)= \sqrt{u_A ^2(D_w)+ u_B ^2(D_w)} = \sqrt{(0.027386)^2+(0.0288675)^2}=0.040 \cdot 10^{-3} \ [m] &&
+\end{flalign*}
+
+
+
+            \subsection{\centering Wysokość „$ \ H \ $”}
+\subsubsection{Średnia wielkość}
+\begin{flalign*}
+    \overline{H} = \frac{33.80+33.70+33.70+33.70+33.70}{5} = 33.72 \cdot 10^{-3} \ [m] &&
+\end{flalign*}
+
+\subsubsection{Niepewność standardowa typu A}
+\begin{flalign*}
+    u_A(H) = \sqrt{\sum_{i=1}^{n=5} \frac{(H_i-\overline{H})^2)}{n \cdot (n-1)}}  =  \sqrt{\frac{(33.80-33.72)^2+4(33.70-33.72)^2}{20}} = 0.02 \cdot 10^{-3} \ [m] &&
+\end{flalign*}
+
+\subsubsection{Niepewność standardowa typu B}S
+\begin{flalign*}
+    u_B(H)=  \sqrt{\frac{\bigtriangleup_p^2(H)}{3}} =\frac{0.05}{\sqrt{3}}=0.0288675 \ [mm] = 0.0289\cdot 10^{-3} \ [m] &&
+\end{flalign*}
+\subsubsection{Niepewność standardowa całkowita}
+\begin{flalign*}
+    u(H)= \sqrt{u_A ^2(H)+ u_B ^2(H)} =\sqrt{(0.02)^2+(0.0288675)^2}=0.035 \cdot 10^{-3} \ [m] &&
+\end{flalign*}
+
+            \subsection{\centering Masa „$ \ m \ $”}
+\subsubsection{Średnia wielkość}
+\begin{flalign*}
+    \overline{m} = 8.32  \cdot 10^{-3} \ [kg] &&
+\end{flalign*}
+
+\subsubsection{Niepewność standardowa typu B}
+\begin{flalign*}
+    u_B(m)=  \sqrt{\frac{\bigtriangleup_p^2(m)}{3}} = \frac{0.01}{\sqrt{3}}=0.0057735 \ [g] = 0.0058\cdot 10^{-3} \ [kg] &&
+\end{flalign*}
+\subsubsection{Niepewność standardowa całkowita}
+\begin{flalign*}
+    u(m)= u_B(m)= 0.0058\cdot 10^{-3} \ [kg] &&
+\end{flalign*}
+
+
+            \subsection{\centering Objętość „$\ V \ $”}
+\begin{flalign*}
+     V = \frac{\pi \overline{H}}{4}(\overline{D_z}^2 - \overline{D_w}^2 ) = \frac{\pi \cdot 33.72}{4} \left ((16.484)^2 - (11.800)^2 ) \right) = 3508.61 \ [mm^3] = 3.51\cdot 10^{-6} \ [m^3] &&
+\end{flalign*}
+\subsubsection{Niepewność złożona}
+\begin{flalign*}
+    u_z(V) &= \sqrt{\sum_{j=1}^{k} \left( \frac{\partial V}{\partial x_j} \right)^2 u^2(x_j)} && \\
+    &= \sqrt{\left( \frac{\partial V}{\partial H} \right)^2 u^2(H) + \left( \frac{\partial V}{\partial D_z} \right)^2 u^2(D_z) + \left( \frac{\partial V}{\partial D_w} \right)^2 u^2(D_w)} && \\
+    &= \sqrt{\left[ \frac{\pi}{4} \left( \overline{D_z}^2 - \overline{D_w}^2 \right) \right]^2 u^2(H) + \left( \frac{\pi H \overline{D_z}}{2} \right)^2 u^2(D_z) + \left( -\frac{\pi H \overline{D_w}}{2} \right)^2 u^2(D_w)} && \\
+    &= \left. \sqrt{ \left[ \frac{\pi}{4} \left( (16.484)^2 - (11.800)^2 \right) \right]^2 \cdot (0.001225) + \left( \frac{\pi \cdot 555.840}{2} \right)^2 \cdot (0.00003969) +} \right. && \\
+    & \quad \left. \overline{ + \left( -\frac{\pi \cdot 397.896}{2} \right)^2 \cdot 0.001521 } \right. && \\
+    &= 25.2522 \ [mm]^3 = 0.02525 \cdot 10^{-6} \ [m]^3 \ &&
+\end{flalign*}
+
+            \subsection{\centering Gęstość „$\ \rho \ $”}
+    \begin{flalign*}\rho= \frac{m}{V}= \frac{8.32  \cdot 10^{-3} \ [kg]}{3.51\cdot 10^{-6} \ [m^3]} =  2370.37 \ \frac{[kg]}{[m^3]}
+ && 
+\end{flalign*}
+\subsubsection{Niepewność złożona}
+    \begin{flalign*}
+    u_z(\rho)= \sqrt{\sum_{j=1}^{k}(\frac{\partial \rho}{\partial x_j})^2 \ u^2(x_j)} = \sqrt{(\frac{\partial \rho}{\partial m})^2 \ u^2(m) + (\frac{\partial \rho}{\partial V})^2 \ u^2(V)} \sqrt{(\frac{1}{V})^2 \ u^2(m) + (-\frac{m}{V^2})^2 \ u^2(V) } = &&
+    \end{flalign*}
+    \begin{flalign*}
+        &= \left. \sqrt{ \left( \frac{1}{3.51 \cdot 10^{-6}} \right)^2 \cdot (0.0058 \cdot 10^{-3})^2 + \left( -\frac{8.320 \cdot 10^{-3}}{(3.51 \cdot 10^{-6})^2} \right)^2 \cdot (0.02525 \cdot 10^{-6})^2 } \right. && \\
+        &= \sqrt{ 2.73 + 290.764 } = 17.13 \ [kg/m^3] &&
+    \end{flalign*}
+\newpage
+\section{Wnioski} 
+\begin{flalign*}
+    U(\rho) &= 2 \cdot u_c(\rho) = 2 \cdot 17.13 = 34 \ [kg/m^3] \ 
+\end{flalign*}
+\begin{flalign*}
+    \rho = (2370 \pm 34) \ [kg/m^3]
+\end{flalign*}
+\begin{flushleft}
+    Podczas ćwiczenia laboratoryjnego było przeprowadzono pomiary wielkości fizycznych (Długość, Masa) za pomocą przyrządów pomiarowych: Mikrometr o rozd. 0.01 mm, Suwmiarka noniuszowa o rozd. 0.05 mm, Waga jubilerska o rozd. 0.01 g. \\
+    Otrzymane wyniki pomiarów były wykorzystane do obliczeń objętości i gęstości, co pozwoliło na określenie materiału z którego został wykonany element mierzony. Końcowa wielkość niepewności gęstości (\(U(\rho)\)) jest dosyć przecyzyjną wartością (ok. 0.7\%). Rezultaty zostały porównane z tablicami \cite[str. 192]{Tabf}. Otrzymana gęstość różni się od najbardziej prawdopodobnego materiału z uwagi na kolor i masę o wartości gęstości ok. \(2700 \ \frac{kg}{m^3}\), co odpowiada glinowi (Al). Różnica ta (ok. \(330 \frac{kg}{m^{3}}\)) mogła być spowodowana niedoskonałością metody pomiarowej, czyli trudnością precyzyjnego zmierzenia średnicy \(D_w\) suwmiarką (mierzenie cięciwy zamiast rzeczywistej średnicy), co mogło doprowadzić do zaniżenia wartości, a zatem zawyżenia objętości walca.
+\end{flushleft}
+
+\vfill
+\normalsize
+\addcontentsline{toc}{section}{Literatura}
+\begin{thebibliography}{9}
+    \bibitem{Niepewnosci} 
+    Ryszard Poprawski,Włodzimierz Salejda, \textit{Ćwiczenia laboratoryjne z Fizyki, cz. 1}, Oficyna Wydawnicza Politechniki Wrocławskiej, Wrocław 2002.
+    \bibitem{Tabf} 
+    Tomasz Szymczyk, Stanisław Rabiej, Anna Pielesz, Jan Desselberger, \textit{Tablice matematyczne, fizyczne, chemiczne,  astronomiczne}, Świat Książki, Warszawa 2003.
+    
+\end{thebibliography}
+\end{document}
